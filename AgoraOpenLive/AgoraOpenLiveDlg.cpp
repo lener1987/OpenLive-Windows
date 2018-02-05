@@ -347,9 +347,9 @@ LRESULT CAgoraOpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
 	vc.view = m_dlgVideo.GetLocalVideoWnd();
 	vc.renderMode = RENDER_MODE_TYPE::RENDER_MODE_FIT;
 
-	//cancel setVideoProfile since version 2.1.0
-	//int nVideoSolution = m_dlgSetup.GetVideoSolution();
-	//lpRtcEngine->setVideoProfile((VIDEO_PROFILE_TYPE)nVideoSolution, m_dlgSetup.IsWHSwap());
+	//cancel setVideoProfile bitrate since version 2.1.0
+	int nVideoSolution = m_dlgSetup.GetVideoSolution();
+	lpRtcEngine->setVideoProfile((VIDEO_PROFILE_TYPE)nVideoSolution, m_dlgSetup.IsWHSwap());
 	
 	m_dlgVideo.SetWindowText(strChannelName);
 	lpRtcEngine->setupLocalVideo(vc);

@@ -111,8 +111,7 @@ void CEnterChannelDlg::InitCtrls()
    
 	m_btnJoin.MoveWindow(ClientRect.Width() / 2 - 180, 310, 360, 36, TRUE);
 	m_btnTest.MoveWindow(ClientRect.Width() / 2 - 180, 355, 108, 36, TRUE);
-	//m_btnSetup.MoveWindow(ClientRect.Width() / 2 - 60, 355, 240, 36, TRUE);
-	m_btnSetup.ShowWindow(SW_HIDE);
+	m_btnSetup.MoveWindow(ClientRect.Width() / 2 - 60, 355, 240, 36, TRUE);
 
 	m_btnJoin.SetBackColor(RGB(0x00, 0xA0, 0xE9), RGB(0x05, 0x78, 0xAA), RGB(0x05, 0x78, 0xAA), RGB(0xE6, 0xE6, 0xE6));
 	m_btnJoin.SetFont(&m_ftBtn);

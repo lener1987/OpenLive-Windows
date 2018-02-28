@@ -1,10 +1,10 @@
 
-// AgoraVideoCallDlg.cpp : implementation file
+// OpenLiveDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "AgoraOPenLive.h"
-#include "AgoraOpenLiveDlg.h"
+#include "OpenLive.h"
+#include "OpenLiveDlg.h"
 #include "afxdialogex.h"
 
 #ifdef _DEBUG
@@ -43,12 +43,10 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CAgoraVideoCallDlg dialog
+// COpenLiveDlg dialog
 
-
-
-CAgoraOpenLiveDlg::CAgoraOpenLiveDlg(CWnd* pParent /*=NULL*/)
-    : CDialogEx(CAgoraOpenLiveDlg::IDD, pParent)
+COpenLiveDlg::COpenLiveDlg(CWnd* pParent /*=NULL*/)
+    : CDialogEx(COpenLiveDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 
@@ -59,7 +57,7 @@ CAgoraOpenLiveDlg::CAgoraOpenLiveDlg(CWnd* pParent /*=NULL*/)
 	m_nNetworkQuality = 0;
 }
 
-void CAgoraOpenLiveDlg::DoDataExchange(CDataExchange* pDX)
+void COpenLiveDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_BTNMIN, m_btnMin);
@@ -68,27 +66,27 @@ void CAgoraOpenLiveDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LINKAGORA, m_linkAgora);
 }
 
-BEGIN_MESSAGE_MAP(CAgoraOpenLiveDlg, CDialogEx)
+BEGIN_MESSAGE_MAP(COpenLiveDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_WM_NCHITTEST()
-    ON_MESSAGE(WM_GOBACK, &CAgoraOpenLiveDlg::OnBackPage)
-    ON_MESSAGE(WM_GONEXT, &CAgoraOpenLiveDlg::OnNextPage)
-    ON_MESSAGE(WM_JOINCHANNEL, &CAgoraOpenLiveDlg::OnJoinChannel)
-    ON_MESSAGE(WM_LEAVECHANNEL, &CAgoraOpenLiveDlg::OnLeaveChannel)
+    ON_MESSAGE(WM_GOBACK, &COpenLiveDlg::OnBackPage)
+    ON_MESSAGE(WM_GONEXT, &COpenLiveDlg::OnNextPage)
+    ON_MESSAGE(WM_JOINCHANNEL, &COpenLiveDlg::OnJoinChannel)
+    ON_MESSAGE(WM_LEAVECHANNEL, &COpenLiveDlg::OnLeaveChannel)
 	
-    ON_BN_CLICKED(IDC_BTNMIN, &CAgoraOpenLiveDlg::OnBnClickedBtnmin)
-    ON_BN_CLICKED(IDC_BTNCLOSE, &CAgoraOpenLiveDlg::OnBnClickedBtnclose)
+    ON_BN_CLICKED(IDC_BTNMIN, &COpenLiveDlg::OnBnClickedBtnmin)
+    ON_BN_CLICKED(IDC_BTNCLOSE, &COpenLiveDlg::OnBnClickedBtnclose)
 
-    ON_MESSAGE(WM_MSGID(EID_NETWORK_QUALITY), &CAgoraOpenLiveDlg::OnNetworkQuality)
+    ON_MESSAGE(WM_MSGID(EID_NETWORK_QUALITY), &COpenLiveDlg::OnNetworkQuality)
 
     ON_WM_CLOSE()
 END_MESSAGE_MAP()
 
 
-// CAgoraVideoCallDlg message handlers
-BOOL CAgoraOpenLiveDlg::PreTranslateMessage(MSG* pMsg)
+// COpenLiveDlg message handlers
+BOOL COpenLiveDlg::PreTranslateMessage(MSG* pMsg)
 {
 	if (pMsg->message == WM_KEYDOWN){
 		switch (pMsg->wParam){
@@ -101,7 +99,7 @@ BOOL CAgoraOpenLiveDlg::PreTranslateMessage(MSG* pMsg)
 	return CDialogEx::PreTranslateMessage(pMsg);
 }
 
-BOOL CAgoraOpenLiveDlg::OnInitDialog()
+BOOL COpenLiveDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
@@ -137,10 +135,9 @@ BOOL CAgoraOpenLiveDlg::OnInitDialog()
 
 	m_lpAgoraObject = CAgoraObject::GetAgoraObject(APP_ID);
 	m_lpRtcEngine = CAgoraObject::GetEngine();
-   
 
 	if (_tcslen(APP_ID) == 0) {
-        MessageBox(_T("请在源码VENDOR_KEY宏定义中填上自己的KEY"), _T("提示"), MB_ICONINFORMATION);
+        MessageBox(_T("Please apply your own App ID to macro APP_ID"), _T("Notice"), MB_ICONINFORMATION);
         PostQuitMessage(0);
     }
 
@@ -157,7 +154,7 @@ BOOL CAgoraOpenLiveDlg::OnInitDialog()
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CAgoraOpenLiveDlg::InitCtrls()
+void COpenLiveDlg::InitCtrls()
 {
 	CRect ClientRect;
 	CBitmap	bmpNetQuality;
@@ -183,7 +180,7 @@ void CAgoraOpenLiveDlg::InitCtrls()
 	CMFCButton::EnableWindowsTheming(FALSE);
 }
 
-void CAgoraOpenLiveDlg::InitChildDialog()
+void COpenLiveDlg::InitChildDialog()
 {
 	CString str;
 
@@ -201,7 +198,7 @@ void CAgoraOpenLiveDlg::InitChildDialog()
 	m_dlgEnterChannel.SetVideoString(m_dlgSetup.GetVideoSolutionDes());
 }
 
-void CAgoraOpenLiveDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void COpenLiveDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -218,7 +215,7 @@ void CAgoraOpenLiveDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CAgoraOpenLiveDlg::OnPaint()
+void COpenLiveDlg::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
 
@@ -246,14 +243,14 @@ void CAgoraOpenLiveDlg::OnPaint()
 
 // The system calls this function to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CAgoraOpenLiveDlg::OnQueryDragIcon()
+HCURSOR COpenLiveDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
 
 
-LRESULT CAgoraOpenLiveDlg::OnNcHitTest(CPoint point)
+LRESULT COpenLiveDlg::OnNcHitTest(CPoint point)
 {
 	// TODO:  在此添加消息处理程序代码和/或调用默认值
 	LRESULT lResult = CDialogEx::OnNcHitTest(point);
@@ -263,7 +260,7 @@ LRESULT CAgoraOpenLiveDlg::OnNcHitTest(CPoint point)
 	return lResult;
 }
 
-void CAgoraOpenLiveDlg::DrawClient(CDC *lpDC)
+void COpenLiveDlg::DrawClient(CDC *lpDC)
 {
 	CRect	rcText;
 	CRect	rcClient;
@@ -289,20 +286,20 @@ void CAgoraOpenLiveDlg::DrawClient(CDC *lpDC)
 	lpDC->SelectObject(defFont);
 }
 
-void CAgoraOpenLiveDlg::OnBnClickedBtnmin()
+void COpenLiveDlg::OnBnClickedBtnmin()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	ShowWindow(SW_MINIMIZE);
 }
 
 
-void CAgoraOpenLiveDlg::OnBnClickedBtnclose()
+void COpenLiveDlg::OnBnClickedBtnclose()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	CDialogEx::OnCancel();
 }
 
-LRESULT CAgoraOpenLiveDlg::OnBackPage(WPARAM wParam, LPARAM lParam)
+LRESULT COpenLiveDlg::OnBackPage(WPARAM wParam, LPARAM lParam)
 {
 	if (m_lpCurDialog == &m_dlgSetup) {
 		m_lpCurDialog->ShowWindow(SW_HIDE);
@@ -317,7 +314,7 @@ LRESULT CAgoraOpenLiveDlg::OnBackPage(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-LRESULT CAgoraOpenLiveDlg::OnNextPage(WPARAM wParam, LPARAM lParam)
+LRESULT COpenLiveDlg::OnNextPage(WPARAM wParam, LPARAM lParam)
 {
 	m_lpCurDialog->ShowWindow(SW_HIDE);
 	if (m_lpCurDialog == &m_dlgEnterChannel)
@@ -328,7 +325,7 @@ LRESULT CAgoraOpenLiveDlg::OnNextPage(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-LRESULT CAgoraOpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
+LRESULT COpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
 {
 	IRtcEngine		*lpRtcEngine = CAgoraObject::GetEngine();
 	CAgoraObject	*lpAgoraObject = CAgoraObject::GetAgoraObject();
@@ -359,7 +356,7 @@ LRESULT CAgoraOpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-LRESULT CAgoraOpenLiveDlg::OnLeaveChannel(WPARAM wParam, LPARAM lParam)
+LRESULT COpenLiveDlg::OnLeaveChannel(WPARAM wParam, LPARAM lParam)
 {
 	CAgoraObject	*lpAgoraObject = CAgoraObject::GetAgoraObject();
 
@@ -368,7 +365,7 @@ LRESULT CAgoraOpenLiveDlg::OnLeaveChannel(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-LRESULT CAgoraOpenLiveDlg::OnNetworkQuality(WPARAM wParam, LPARAM lParam)
+LRESULT COpenLiveDlg::OnNetworkQuality(WPARAM wParam, LPARAM lParam)
 {
 	LPAGE_NETWORK_QUALITY lpData = (LPAGE_NETWORK_QUALITY)wParam;
 
@@ -381,7 +378,7 @@ LRESULT CAgoraOpenLiveDlg::OnNetworkQuality(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-void CAgoraOpenLiveDlg::OnClose()
+void COpenLiveDlg::OnClose()
 {
     // TODO:  在此添加消息处理程序代码和/或调用默认值
 

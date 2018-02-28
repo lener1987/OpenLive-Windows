@@ -23,19 +23,19 @@ Agora视频SDK支持 iOS / Android / Windows / macOS 等多个平台，你可以
 - [OpenLive-macOS](https://github.com/AgoraIO/OpenLive-macOS)
 
 ## 运行示例程序
-首先在 [Agora.io 注册](https://dashboard.agora.io/cn/signup/) 注册账号，并创建自己的测试项目，获取到 AppID。将 APP_ID宏定义内容改为刚才申请的AppID
+首先在 [Agora.io 注册](https://dashboard.agora.io/cn/signup/) 注册账号，并创建自己的测试项目，获取到 App ID。将 APP_ID宏定义内容改为刚才申请的 App ID
 
 ```
 #define APP_ID _T("Your App ID")
 ```
 
-然后在 [Agora.io SDK](https://www.agora.io/cn/blog/download/) 下载 **视频通话 + 直播 SDK**，解压后将其中的 **sdk** 复制到本项目的 “OpenLive” 文件夹下（并覆盖同名旧目录）。
+然后在 [Agora.io SDK](https://www.agora.io/cn/download/) 下载 **视频通话 + 直播 SDK**，解压后将其中的 **sdk** 复制到本项目目录下（并覆盖原有旧目录）。
 
 最后使用 VC++2013 打开 OpenLive.sln，编译整个解决方案即可运行
 
 ## 运行环境
 * VC++ 2013(或更高版本)
-* Windows7(或更高版本)
+* Windows 7(或更高版本)
 
 ## 联系我们
 

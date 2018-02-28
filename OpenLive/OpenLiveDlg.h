@@ -1,5 +1,5 @@
 
-// AgoraVideoCallDlg.h : header file
+// OpenLiveDlg.h : header file
 //
 
 #pragma once
@@ -9,12 +9,12 @@
 #include "SetupDlg.h"
 #include "VideoDlg.h"
 
-// CAgoraVideoCallDlg dialog
-class CAgoraOpenLiveDlg : public CDialogEx
+// COpenLiveDlg dialog
+class COpenLiveDlg : public CDialogEx
 {
 // Construction
 public:
-    CAgoraOpenLiveDlg(CWnd* pParent = NULL);	// standard constructor
+    COpenLiveDlg(CWnd* pParent = NULL);	// standard constructor
 
 // Dialog Data
 	enum { IDD = IDD_AGORAVIDEOCALL_DIALOG };

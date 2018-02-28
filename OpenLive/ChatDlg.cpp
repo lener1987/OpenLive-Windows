@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "AgoraOpenLive.h"
+#include "OpenLive.h"
 #include "ChatDlg.h"
 #include "afxdialogex.h"
 

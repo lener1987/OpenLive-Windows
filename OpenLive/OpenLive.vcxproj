@@ -20,8 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{26AF88DC-1933-4A1B-9991-21DF11DCE388}</ProjectGuid>
-    <RootNamespace>AgoraOpenLive</RootNamespace>
+    <RootNamespace>OpenLive</RootNamespace>
     <Keyword>MFCProj</Keyword>
+    <ProjectName>OpenLive</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -189,9 +190,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="AGButton.h" />
     <ClInclude Include="AGComboBox.h" />
     <ClInclude Include="AGConfig.h" />
@@ -205,8 +203,8 @@
     <ClInclude Include="AgoraCameraManager.h" />
     <ClInclude Include="AgoraPlayoutManager.h" />
     <ClInclude Include="AgoraObject.h" />
-    <ClInclude Include="AgoraOpenLive.h" />
-    <ClInclude Include="AgoraOpenLiveDlg.h" />
+    <ClInclude Include="OpenLive.h" />
+    <ClInclude Include="OpenLiveDlg.h" />
     <ClInclude Include="AGResourceVisitor.h" />
     <ClInclude Include="AGScreenCaptureDlg.h" />
     <ClInclude Include="AGSliderCtrl.h" />
@@ -236,8 +234,8 @@
     <ClCompile Include="AgoraCameraManager.cpp" />
     <ClCompile Include="AgoraPlayoutManager.cpp" />
     <ClCompile Include="AgoraObject.cpp" />
-    <ClCompile Include="AgoraOpenLive.cpp" />
-    <ClCompile Include="AgoraOpenLiveDlg.cpp" />
+    <ClCompile Include="OpenLive.cpp" />
+    <ClCompile Include="OpenLiveDlg.cpp" />
     <ClCompile Include="AGResourceVisitor.cpp" />
     <ClCompile Include="AGScreenCaptureDlg.cpp" />
     <ClCompile Include="AGSliderCtrl.cpp" />
@@ -259,14 +257,14 @@
     <ClCompile Include="VideoDlg.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="AgoraOpenLive.rc" />
+    <ResourceCompile Include="OpenLive.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\AgoraOpenLive.rc2" />
+    <None Include="res\OpenLive.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="IDB_TIP_VIDEO.BMP" />
-    <Image Include="res\AgoraOpenLive.ico" />
+    <Image Include="res\OpenLive.ico" />
     <Image Include="res\IDB_BACKGROUND_VIDEO.bmp" />
     <Image Include="res\IDB_BTNAUDIO_VIDEO.bmp" />
     <Image Include="res\IDB_BTNBIG_HOT.bmp" />

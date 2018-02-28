@@ -1,5 +1,5 @@
 
-// AgoraVideoCall.h : main header file for the PROJECT_NAME application
+// OpenLive.h : main header file for the PROJECT_NAME application
 //
 
 #pragma once
@@ -11,14 +11,14 @@
 #include "resource.h"		// main symbols
 
 
-// CAgoraVideoCallApp:
-// See AgoraVideoCall.cpp for the implementation of this class
+// COpenLiveApp:
+// See COpenLiveApp.cpp for the implementation of this class
 //
 
-class CAgoraOpenLiveApp : public CWinApp
+class COpenLiveApp : public CWinApp
 {
 public:
-    CAgoraOpenLiveApp();
+    COpenLiveApp();
 
 // Overrides
 public:
@@ -29,4 +29,4 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CAgoraOpenLiveApp theApp;
+extern COpenLiveApp theApp;

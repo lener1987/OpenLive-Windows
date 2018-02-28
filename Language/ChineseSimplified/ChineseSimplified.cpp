@@ -4,15 +4,13 @@
 #include "stdafx.h"
 #include "ChineseSimplified.h"
 
+CHINESESIMPLIFIED_API LPCTSTR ID_STR_TITLE = _T("OpenLive");
 
-// 这是导出变量的一个示例
-CHINESESIMPLIFIED_API LPCTSTR ID_STR_TITLE = _T("Agora Live Video");
-
-CHINESESIMPLIFIED_API LPCTSTR IDS_TITLE = _T("Agora Live Video");
+CHINESESIMPLIFIED_API LPCTSTR IDS_TITLE = _T("OpenLive");
 CHINESESIMPLIFIED_API LPCTSTR IDS_LOGO_DESC = _T("Powering Real-Time Communications");
 CHINESESIMPLIFIED_API LPCTSTR IDS_LOGO_AGORAWEB = _T("agora.io");
 
-CHINESESIMPLIFIED_API LPCTSTR IDS_PRE_TITLE = _T("Slelct conference type");
+CHINESESIMPLIFIED_API LPCTSTR IDS_PRE_TITLE = _T("Select conference type");
 CHINESESIMPLIFIED_API LPCTSTR IDS_PRE_OPTDSC1 = _T("* Optimized calls have best performance but");
 CHINESESIMPLIFIED_API LPCTSTR IDS_PRE_OPTDSC2 = _T("  cannot be joined by web participants");
 CHINESESIMPLIFIED_API LPCTSTR IDS_PRE_WEBDSC1 = _T("* Web-compatible calls have goog performance");
@@ -22,8 +20,8 @@ CHINESESIMPLIFIED_API LPCTSTR IDS_PRE_BTNWEB = _T("Web-compatible");
 
 CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_TITLE1 = _T("频道名:");
 CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_TITLE2 = _T("频道名");
-CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_DSC1 = _T("if you are the first person to specify this name,the room");
-CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_DSC2 = _T("will be created and you will be placed in it.if it has");
+CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_DSC1 = _T("if you are the first person to specify this name, the room");
+CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_DSC2 = _T("will be created and you will be placed in it. if it has");
 CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_DSC3 = _T("already been created you will join the conference in");
 CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_DSC4 = _T("progress");
 CHINESESIMPLIFIED_API LPCTSTR IDS_CHN_ROOMKEY = _T("房间口令:");

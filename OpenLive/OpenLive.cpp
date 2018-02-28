@@ -1,11 +1,11 @@
 
-// AgoraVideoCall.cpp : Defines the class behaviors for the application.
+// OpenLive.cpp : Defines the class behaviors for the application.
 //
 
 #include "stdafx.h"
-#include "AgoraOpenLive.h"
+#include "OpenLive.h"
 #include "LogoDlg.h"
-#include "AgoraOpenLiveDlg.h"
+#include "OpenLiveDlg.h"
 #include "EnterChannelDlg.h"
 
 #ifdef _DEBUG
@@ -13,16 +13,16 @@
 #endif
 
 
-// CAgoraVideoCallApp
+// COpenLiveApp
 
-BEGIN_MESSAGE_MAP(CAgoraOpenLiveApp, CWinApp)
+BEGIN_MESSAGE_MAP(COpenLiveApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
 
-// CAgoraVideoCallApp construction
+// COpenLiveApp construction
 
-CAgoraOpenLiveApp::CAgoraOpenLiveApp()
+COpenLiveApp::COpenLiveApp()
 {
 	// support Restart Manager
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
@@ -32,14 +32,14 @@ CAgoraOpenLiveApp::CAgoraOpenLiveApp()
 }
 
 
-// The one and only CAgoraVideoCallApp object
+// The one and only COpenLiveApp object
 
-CAgoraOpenLiveApp theApp;
+COpenLiveApp theApp;
 
 
-// CAgoraVideoCallApp initialization
+// COpenLiveApp initialization
 
-BOOL CAgoraOpenLiveApp::InitInstance()
+BOOL COpenLiveApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
@@ -76,7 +76,7 @@ BOOL CAgoraOpenLiveApp::InitInstance()
 	CLogoDlg Logo;
 
 	nResponse = Logo.DoModal();
-	CAgoraOpenLiveDlg	avcDlg;
+	COpenLiveDlg	avcDlg;
 
 	m_pMainWnd = &avcDlg;
 	nResponse = avcDlg.DoModal();

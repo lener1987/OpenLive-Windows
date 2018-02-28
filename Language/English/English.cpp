@@ -1,15 +1,15 @@
-// English.cpp : 定义 DLL 应用程序的导出函数。
+// English.cpp
 //
 
 #include "stdafx.h"
 #include "English.h"
 
 
-ENGLISH_API LPCTSTR IDS_TITLE = _T("Agora Live Video");
+ENGLISH_API LPCTSTR IDS_TITLE = _T("OpenLive");
 ENGLISH_API LPCTSTR IDS_LOGO_DESC = _T("Powering Real-Time Communications");
 ENGLISH_API LPCTSTR IDS_LOGO_AGORAWEB = _T("agora.io");
 
-ENGLISH_API LPCTSTR IDS_PRE_TITLE = _T("Slelct conference type");
+ENGLISH_API LPCTSTR IDS_PRE_TITLE = _T("Select conference type");
 ENGLISH_API LPCTSTR IDS_PRE_OPTDSC1 = _T("* Optimized calls have best performance but");
 ENGLISH_API LPCTSTR IDS_PRE_OPTDSC2 = _T("  cannot be joined by web participants");
 ENGLISH_API LPCTSTR IDS_PRE_WEBDSC1 = _T("* Web-compatible calls have goog performance");
@@ -19,8 +19,8 @@ ENGLISH_API LPCTSTR IDS_PRE_BTNWEB = _T("Web-compatible");
 
 ENGLISH_API LPCTSTR IDS_CHN_TITLE1 = _T("RoomName:");
 ENGLISH_API LPCTSTR IDS_CHN_TITLE2 = _T("name");
-ENGLISH_API LPCTSTR IDS_CHN_DSC1 = _T("if you are the first person to specify this name,the room");
-ENGLISH_API LPCTSTR IDS_CHN_DSC2 = _T("will be created and you will be placed in it.if it has");
+ENGLISH_API LPCTSTR IDS_CHN_DSC1 = _T("if you are the first person to specify this name, the room");
+ENGLISH_API LPCTSTR IDS_CHN_DSC2 = _T("will be created and you will be placed in it. if it has");
 ENGLISH_API LPCTSTR IDS_CHN_DSC3 = _T("already been created you will join the conference in");
 ENGLISH_API LPCTSTR IDS_CHN_DSC4 = _T("progress");
 ENGLISH_API LPCTSTR IDS_CHN_ROOMKEY = _T("RoomPWD:");

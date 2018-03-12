@@ -45,7 +45,6 @@ protected:
 	afx_msg LRESULT OnNcHitTest(CPoint point);
 	afx_msg LRESULT OnShowModeChanged(WPARAM wParam, LPARAM lParam);
 	afx_msg LRESULT OnShowBig(WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnWindowShareStart(WPARAM wParam, LPARAM lParam);
 
 	afx_msg void OnBnClickedBtnmin();
 	afx_msg void OnBnClickedBtnclose();

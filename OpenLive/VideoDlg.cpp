@@ -1,4 +1,4 @@
-// VideoDlg.cpp : 实现文件
+// VideoDlg.cpp : implement file
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 #include "AGEventDef.h"
 
-// CVideoDlg 对话框
+// CVideoDlg dialog
 
 IMPLEMENT_DYNAMIC(CVideoDlg, CDialogEx)
 
@@ -88,14 +88,14 @@ BEGIN_MESSAGE_MAP(CVideoDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CVideoDlg 消息处理程序
+// CVideoDlg messag deal with app
 
 
 void CVideoDlg::OnSize(UINT nType, int cx, int cy)
 {
 	CDialogEx::OnSize(nType, cx, cy);
 
-	// TODO:  在此处添加消息处理程序代码
+	// TODO:  Add control notification handler code here
 	if (m_btnMin.GetSafeHwnd() != NULL)
 		m_btnMin.MoveWindow(cx - 72, 0, 24, 24, TRUE);
 	if (m_btnRst.GetSafeHwnd() != NULL)
@@ -107,7 +107,7 @@ void CVideoDlg::OnSize(UINT nType, int cx, int cy)
 	m_rcVideoArea.top += 24;
 	m_rcVideoArea.bottom -= 72;
 
-	// 2人， 右上角子画面区域
+	// 2人， Top right corner sub-screen area
 	m_rcChildVideoArea.top = m_rcVideoArea.top + 10;
 	m_rcChildVideoArea.bottom = m_rcChildVideoArea.top + 144;
 	m_rcChildVideoArea.right = m_rcVideoArea.right - 14;
@@ -244,7 +244,7 @@ void CVideoDlg::AdjustSizeVideoMulti(int cx, int cy)
 
 void CVideoDlg::OnMouseMove(UINT nFlags, CPoint point)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  Add control notification handler code here or call default value
 		if (m_bFullScreen) {
 		m_nTimeCounter = 5;
 		ShowControlButton(TRUE);
@@ -317,15 +317,15 @@ void CVideoDlg::EnableSize(BOOL bEnable)
 void CVideoDlg::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-	// TODO:  在此处添加消息处理程序代码
-	// 不为绘图消息调用 CDialogEx::OnPaint()
+	// TODO: Add control notification handler code here
+	// not call  CDialogEx::OnPaint() for paint message
 	DrawHead(&dc);
 }
 
 
 LRESULT CVideoDlg::OnNcHitTest(CPoint point)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  Add control notification handler code here or call default value
 	LRESULT lResult = CDialogEx::OnNcHitTest(point);
 	if (lResult == HTCLIENT && ::GetAsyncKeyState(MK_LBUTTON) < 0)
 		lResult = HTCAPTION;
@@ -1051,7 +1051,7 @@ BOOL CVideoDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// TODO:  在此添加额外的初始化
+	// TODO:  add codes to initialize
 	m_dlgDevice.Create(CDeviceDlg::IDD, this);
 	m_dlgDevice.EnableDeviceTest(FALSE);
 
@@ -1067,7 +1067,7 @@ BOOL CVideoDlg::OnInitDialog()
 	InitCtrls();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// 异常:  OCX 属性页应返回 FALSE
+	// error:  OCX attribute pages return FALSE
 }
 
 
@@ -1122,7 +1122,7 @@ void CVideoDlg::RebindVideoWnd()
 
 BOOL CVideoDlg::PreTranslateMessage(MSG* pMsg)
 {
-	// TODO:  在此添加专用代码和/或调用基类
+	// TODO:  Add control notification handler code here or call basic class
 	if (pMsg->message == WM_KEYDOWN){
 		switch (pMsg->wParam){
 		case VK_RETURN:
@@ -1177,7 +1177,7 @@ void CVideoDlg::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CDialogEx::OnShowWindow(bShow, nStatus);
 
-	// TODO:  在此处添加消息处理程序代码
+	// TODO:  Add control notification handler code here
 
 	if (bShow && GetSafeHwnd() != NULL) {
 		RebindVideoWnd();

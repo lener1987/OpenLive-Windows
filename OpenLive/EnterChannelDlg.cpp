@@ -1,4 +1,4 @@
-// EnterChannelDlg.cpp : 实现文件
+// EnterChannelDlg.cpp : implement file
 //
 
 #include "stdafx.h"
@@ -9,7 +9,7 @@
 #include "afxdialogex.h"
 
 
-// CEnterChannelDlg 对话框
+// CEnterChannelDlg dialog
 
 IMPLEMENT_DYNAMIC(CEnterChannelDlg, CDialogEx)
 
@@ -46,7 +46,7 @@ BEGIN_MESSAGE_MAP(CEnterChannelDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CEnterChannelDlg 消息处理程序
+// CEnterChannelDlg message deal with app
 BOOL CEnterChannelDlg::PreTranslateMessage(MSG* pMsg)
 {
 	if (pMsg->message == WM_KEYDOWN){
@@ -66,7 +66,7 @@ BOOL CEnterChannelDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// TODO:  在此添加额外的初始化
+	// TODO: 
 
 	m_ftHead.CreateFont(15, 0, 0, 0, FW_NORMAL, FALSE, FALSE, 0, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, _T("Arial"));
 	m_ftDesc.CreateFont(15, 0, 0, 0, FW_NORMAL, FALSE, FALSE, 0, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, _T("Arial"));
@@ -80,7 +80,7 @@ BOOL CEnterChannelDlg::OnInitDialog()
 	InitCtrls();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// 异常:  OCX 属性页应返回 FALSE
+	// error:  OCX attribute page return  FALSE
 }
 
 void CEnterChannelDlg::InitCtrls()
@@ -172,7 +172,7 @@ void CEnterChannelDlg::DrawClient(CDC *lpDC)
 
 void CEnterChannelDlg::OnBnClickedBtntestChannel()
 {
-	// TODO:  在此添加控件通知处理程序代码
+	// TODO:  
 	m_dlgDevice.ShowWindow(SW_SHOW);
 	m_dlgDevice.CenterWindow();
 }
@@ -180,7 +180,7 @@ void CEnterChannelDlg::OnBnClickedBtntestChannel()
 
 void CEnterChannelDlg::OnBnClickedBtnjoinChannel()
 {
-	// TODO:  在此添加控件通知处理程序代码
+	// TODO:  Add control notification handler code here
 	CString     strKey;
     CString     strChannelName;
     CString     strInfo;
@@ -197,7 +197,7 @@ void CEnterChannelDlg::OnBnClickedBtnjoinChannel()
 
 void CEnterChannelDlg::OnBnClickedBtnsetChannel()
 {
-	// TODO:  在此添加控件通知处理程序代码
+	// TODO:  Add control notification handler code here
 
 	GetParent()->SendMessage(WM_GONEXT, 0, 0);
 }

@@ -1,4 +1,4 @@
-// AGVideoTestWnd.cpp : 实现文件
+// AGVideoTestWnd.cpp : implement file
 //
 
 #include "stdafx.h"
@@ -35,14 +35,14 @@ END_MESSAGE_MAP()
 
 
 
-// CAGVideoTestWnd 消息处理程序
+// CAGVideoTestWnd Message handle
 
 int CAGVideoTestWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	// TODO:  在此添加您专用的创建代码
+	// TODO:  add you own creation code here
 	CRect		rcChildRect;
 
 	DWORD dwWndStyle = WS_VISIBLE | WS_CHILD;
@@ -54,8 +54,7 @@ int CAGVideoTestWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 void CAGVideoTestWnd::OnPaint()
 {
-	// TODO: 在此处添加消息处理程序代码
-	// 不为绘图消息调用 CWnd::OnPaint()
+	// TODO: add message handle code here
 	CPaintDC dc(this);
 
 	CRect rcClient;
@@ -110,5 +109,5 @@ void CAGVideoTestWnd::OnSize(UINT nType, int cx, int cy)
 	if (m_wndVideoWnd.GetSafeHwnd() != NULL)
 		m_wndVideoWnd.MoveWindow(15, 0, cx - 30, cy);
 
-	// TODO:  在此处添加消息处理程序代码
+	// TODO:   add message handle code here
 }

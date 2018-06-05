@@ -1,4 +1,4 @@
-// AGEdit.cpp : 实现文件
+// AGEdit.cpp : implement file
 //
 
 #include "stdafx.h"
@@ -46,7 +46,7 @@ END_MESSAGE_MAP()
 
 
 
-// CAGEdit 消息处理程序
+// CAGEdit message handle
 void CAGEdit::SetTip(LPCTSTR lpTip)
 {
     m_strTip = lpTip;
@@ -73,7 +73,7 @@ void CAGEdit::SetColor(COLORREF crBorder, COLORREF crBack, COLORREF crText, COLO
 
 BOOL CAGEdit::OnEraseBkgnd(CDC* pDC)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO: add message handle here or call default value
 	CRect rcWindow;
 	
 	GetWindowRect(&rcWindow);
@@ -87,7 +87,7 @@ BOOL CAGEdit::OnEraseBkgnd(CDC* pDC)
 
 HBRUSH CAGEdit::CtlColor(CDC* pDC, UINT nCtlColor)
 {
-	// TODO:  在此更改 DC 的任何属性
+	// TODO:  update dc any attribute
 	pDC->SetBkColor(m_crBack);
 
     if (m_bEmpty)
@@ -95,13 +95,13 @@ HBRUSH CAGEdit::CtlColor(CDC* pDC, UINT nCtlColor)
     else
         pDC->SetTextColor(m_crText);
 
-	// TODO:  如果不应调用父级的处理程序，则返回非 null 画笔
-	return (HBRUSH)m_brushBack;	//编辑框底色画刷
+	// TODO:  Non-null brush if the parent's handler should not be called
+	return (HBRUSH)m_brushBack;	//Edit box background brush
 }
 
 void CAGEdit::OnMouseHover(UINT nFlags, CPoint point)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  add message handles code and/ or call default value here
 
 	CEdit::OnMouseHover(nFlags, point);
 }
@@ -109,7 +109,7 @@ void CAGEdit::OnMouseHover(UINT nFlags, CPoint point)
 
 void CAGEdit::OnMouseMove(UINT nFlags, CPoint point)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  add message handles code and/ or call default value here
 	if (!m_bTrackMouseEvent) {
 		TRACKMOUSEEVENT TrackMouseEvent;
 		TrackMouseEvent.cbSize = sizeof(TRACKMOUSEEVENT);
@@ -126,7 +126,7 @@ void CAGEdit::OnMouseMove(UINT nFlags, CPoint point)
 
 void CAGEdit::OnMouseLeave()
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  add message handle code and/ or call default value here
 	m_bTrackMouseEvent = FALSE;
 
 	CEdit::OnMouseLeave();
@@ -137,7 +137,7 @@ void CAGEdit::OnSetFocus(CWnd* pOldWnd)
 {
     CEdit::OnSetFocus(pOldWnd);
 
-    // TODO:  在此处添加消息处理程序代码
+    // TODO:  
     if (m_bEmpty) {
         m_bTexting = FALSE;
         SetWindowText(_T(""));
@@ -150,7 +150,7 @@ void CAGEdit::OnKillFocus(CWnd* pNewWnd)
 {
     CEdit::OnKillFocus(pNewWnd);
 
-    // TODO:  在此处添加消息处理程序代码
+    // TODO:  add message handle code here
     m_bTexting = FALSE;
     if (m_bEmpty)
         SetWindowText(m_strTip);
@@ -159,7 +159,7 @@ void CAGEdit::OnKillFocus(CWnd* pNewWnd)
 
 void CAGEdit::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-    // TODO:  在此添加消息处理程序代码和/或调用默认值
+    // TODO:  add message handle code and /or call default value here
     m_bTexting = TRUE;
 
     if (GetWindowTextLength() <= 2)
@@ -171,12 +171,9 @@ void CAGEdit::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CAGEdit::OnEnChange()
 {
-    // TODO:  如果该控件是 RICHEDIT 控件，它将不
-    // 发送此通知，除非重写 CEdit::OnInitDialog()
-    // 函数并调用 CRichEditCtrl().SetEventMask()，
-    // 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+    // TODO: 
 
-    // TODO:  在此添加控件通知处理程序代码
+    // TODO:  add message handle code here
     if (m_bTexting)
         m_bEmpty = (GetWindowTextLength() == 0) ? TRUE : FALSE;
 }
@@ -187,7 +184,7 @@ int CAGEdit::OnCreate(LPCREATESTRUCT lpCreateStruct)
     if (CEdit::OnCreate(lpCreateStruct) == -1)
         return -1;
 
-    // TODO:  在此添加您专用的创建代码
+    // TODO:  Add your own creation code here
     m_bTexting = FALSE;
     if (m_bEmpty)
         SetWindowText(m_strTip);

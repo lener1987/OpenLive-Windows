@@ -33,6 +33,9 @@ Agora视频SDK支持 iOS / Android / Windows / macOS 等多个平台，你可以
 
 最后使用 VC++2013 打开 OpenLive.sln，编译整个解决方案即可运行
 
+Note:
+  本开源项目在 debug 模式下运行可能会出现崩溃，请在 release 模式下运行。
+
 ## 运行环境
 * VC++ 2013(或更高版本)
 * Windows 7(或更高版本)

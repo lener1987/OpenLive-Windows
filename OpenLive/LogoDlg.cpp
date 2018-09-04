@@ -1,4 +1,4 @@
-// LogoDlg.cpp : 实现文件
+// LogoDlg.cpp : Implement file
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// CLogoDlg 对话框
+// CLogoDlg dialog
 
 IMPLEMENT_DYNAMIC(CLogoDlg, CDialogEx)
 
@@ -38,7 +38,7 @@ BEGIN_MESSAGE_MAP(CLogoDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CLogoDlg 消息处理程序
+// CLogoDlg message deal with app
 
 BOOL CLogoDlg::OnInitDialog()
 {
@@ -86,7 +86,7 @@ void CLogoDlg::InitCtrls()
 
 LRESULT CLogoDlg::OnNcHitTest(CPoint point)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  Add control notification handler code here or call default value
 	LRESULT lResult = CDialogEx::OnNcHitTest(point);
 	if (lResult == HTCLIENT && ::GetAsyncKeyState(MK_LBUTTON) < 0)
 		lResult = HTCAPTION;
@@ -123,14 +123,14 @@ void CLogoDlg::DrawClient(CDC *lpDC)
 
 void CLogoDlg::OnBnClickedBtnmin()
 {
-	// TODO:  在此添加控件通知处理程序代码
+	// TODO:  Add control notification handler code here
 	ShowWindow(SW_MINIMIZE);
 }
 
 
 void CLogoDlg::OnBnClickedBtnclose()
 {
-	// TODO:  在此添加控件通知处理程序代码
+	// TODO:  Add control notification handler code here
 	AnimateWindow(1000, AW_BLEND | AW_HIDE | AW_SLIDE);
 
 	CDialogEx::OnCancel();
@@ -140,7 +140,7 @@ void CLogoDlg::OnBnClickedBtnclose()
 
 void CLogoDlg::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// TODO:  Add control notification handler code here or call default value
 	if (nIDEvent == 1){
 		PostMessage(WM_COMMAND, (WPARAM)IDCANCEL, NULL);
 		KillTimer(1);
@@ -153,8 +153,8 @@ void CLogoDlg::OnTimer(UINT_PTR nIDEvent)
 void CLogoDlg::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-	// TODO:  在此处添加消息处理程序代码
-	// 不为绘图消息调用 CDialogEx::OnPaint()
+	// TODO: Add control notification handler code here
+	// not call CDialogEx::OnPaint() for paint message
 
 	DrawClient(&dc);
 }

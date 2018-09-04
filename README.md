@@ -33,6 +33,9 @@ Next, download the **Agora Video SDK** from [Agora.io SDK](https://www.agora.io/
 
 Finally, Open OpenLive.sln with your VC++ 2013(or higher) and build all solution and run.
 
+Note：
+  You may encounter crash when running this demo under debug mode. Please run this demo under release mode.
+  
 ## Developer Environment Requirements
 * VC++ 2013(or higher)
 * Windows 7(or higher)
